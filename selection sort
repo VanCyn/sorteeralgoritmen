@@ -1,0 +1,23 @@
+# Python programma dat sorteert volgens "selection sort"
+import sys
+
+A = [64, 25, 12, 22, 11]
+
+# loop door alle element van de array
+for i in range(len(A)):
+
+    # Vind het minimum in het overblijvende deel van de
+    # ongesorteerde array
+    min_idx = i
+    for j in range(i + 1, len(A)):
+        if A[min_idx] > A[j]:
+            min_idx = j
+
+    # Wissel het gevonden minimum element met
+    # het eerste element
+    A[i], A[min_idx] = A[min_idx], A[i]
+
+# Programma om bovenstaande te testen
+print("Sorted array")
+for i in range(len(A)):
+    print("%d" % A[i], end=" ")

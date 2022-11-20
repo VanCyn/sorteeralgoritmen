@@ -1,0 +1,33 @@
+# Python programma voor het sorteeralgoritme "Bubble sort"
+
+# Eerst schrijven we zelf een functie "bubbleSort"
+
+
+def bubbleSort(arr):
+    # zoek eerst de lengte van de arry
+    n = len(arr)
+
+    # Doorloop alle elementen van de array
+    for i in range(n):
+
+        # De laatste i elementen zijn al gesorteerd
+        for j in range(0, n - i - 1):
+
+            # doorloop de array van  0 to n-i-1
+            # wissel als het element groter is
+            # daarna het volgende element
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+
+# Code om bovenstaande te testen
+# De variabele __name__ =="__main__" als we aan het werken zijn in het hoofprogramma
+# Dus onderstaande wordt enkel uitgevoerd als we niet in een geïmporteerde file aan het werken zijn;
+if __name__ == "__main__":
+    arr = [5, 8, 7, 3, 10]
+
+    bubbleSort(arr)
+
+    print("Sorted array is:")
+    for i in range(len(arr)):
+        print("%d" % arr[i], end=" ")
